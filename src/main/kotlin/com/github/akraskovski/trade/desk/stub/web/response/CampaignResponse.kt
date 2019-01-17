@@ -7,40 +7,28 @@ import java.time.LocalDateTime
  * Campaign response model.
  */
 class CampaignResponse(
-    @JsonProperty("CampaignId")
-    var id: String? = null,
+    @field:JsonProperty("CampaignId") var id: String? = null,
 
-    @JsonProperty("AdvertiserId")
-    var advertiserId: String? = null,
+    @field:JsonProperty("AdvertiserId") var advertiserId: String? = null,
 
-    @JsonProperty("CampaignName")
-    var name: String? = null,
+    @field:JsonProperty("CampaignName") var name: String? = null,
 
-    @JsonProperty("Description")
-    var description: String? = null,
+    @field:JsonProperty("Description") var description: String? = null,
 
-    @JsonProperty("Budget")
-    var budget: MoneyResponse? = null,
+    @field:JsonProperty("Budget") var budget: MoneyResponse? = null,
 
-    @JsonProperty("BudgetInImpressions")
-    var budgetInImpressions: Int? = null,
+    @field:JsonProperty("BudgetInImpressions") var budgetInImpressions: Int? = null,
 
-    @JsonProperty("DailyBudget")
-    var dailyBudget: MoneyResponse? = null,
+    @field:JsonProperty("DailyBudget") var dailyBudget: MoneyResponse? = null,
 
-    @JsonProperty("DailyBudgetInImpressions")
-    var dailyBudgetInImpressions: Int? = null,
+    @field:JsonProperty("DailyBudgetInImpressions") var dailyBudgetInImpressions: Int? = null,
 
-    @JsonProperty("StartDate")
-    var startDate: LocalDateTime? = null,
+    @field:JsonProperty("StartDate") var startDate: LocalDateTime? = null,
 
-    @JsonProperty("EndDate")
-    var endDate: LocalDateTime? = null,
+    @field:JsonProperty("EndDate") var endDate: LocalDateTime? = null,
 
-    @JsonProperty("Availability")
-    var availability: String? = null,
+    @field:JsonProperty("Availability") var availability: String? = null,
 
-    @JsonProperty("PacingMode")
-    var pacingMode: String? = null
+    @field:JsonProperty("PacingMode") var pacingMode: String? = null
 )
 
