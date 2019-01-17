@@ -9,4 +9,3 @@ class TradeDeskStubApplication
 fun main(args: Array<String>) {
     runApplication<TradeDeskStubApplication>(*args)
 }
-
