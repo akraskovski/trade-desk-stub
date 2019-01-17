@@ -1,12 +1,12 @@
-package com.github.akraskovski.trade.desk.stub.web.form
+package com.github.akraskovski.trade.desk.stub.web.response
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import java.math.BigDecimal
 
 /**
- * Money object representation.
+ * MoneyResponse object representation.
  */
-class Money(
+class MoneyResponse(
     @JsonProperty("Amount")
     private var amount: BigDecimal? = null,
 

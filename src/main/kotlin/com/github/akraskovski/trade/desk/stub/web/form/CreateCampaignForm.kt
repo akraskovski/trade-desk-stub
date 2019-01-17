@@ -2,42 +2,32 @@ package com.github.akraskovski.trade.desk.stub.web.form
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import java.time.LocalDateTime
+import javax.validation.constraints.NotEmpty
 
 /**
  * POST Campaign request form.
  */
 class CreateCampaignForm(
-    @JsonProperty("AdvertiserId")
-    var advertiserId: String? = null,
+    @field:JsonProperty("AdvertiserId") @field:NotEmpty var advertiserId: String? = null,
 
-    @JsonProperty("CampaignName")
-    var name: String? = null,
+    @field:JsonProperty("CampaignName") @field:NotEmpty var name: String? = null,
 
-    @JsonProperty("Description")
-    var description: String? = null,
+    @field:JsonProperty("Description") var description: String? = null,
 
-    @JsonProperty("Budget")
-    var budget: Money? = null,
+    @field:JsonProperty("Budget") var budget: MoneyForm? = null,
 
-    @JsonProperty("BudgetInImpressions")
-    var budgetInImpressions: Int? = null,
+    @field:JsonProperty("BudgetInImpressions") var budgetInImpressions: Int? = null,
 
-    @JsonProperty("DailyBudget")
-    var dailyBudget: Money? = null,
+    @field:JsonProperty("DailyBudget") var dailyBudget: MoneyForm? = null,
 
-    @JsonProperty("DailyBudgetInImpressions")
-    var dailyBudgetInImpressions: Int? = null,
+    @field:JsonProperty("DailyBudgetInImpressions") var dailyBudgetInImpressions: Int? = null,
 
-    @JsonProperty("StartDate")
-    var startDate: LocalDateTime? = null,
+    @field:JsonProperty("StartDate") var startDate: LocalDateTime? = null,
 
-    @JsonProperty("EndDate")
-    var endDate: LocalDateTime? = null,
+    @field:JsonProperty("EndDate") var endDate: LocalDateTime? = null,
 
-    @JsonProperty("Availability")
-    var availability: String? = null,
+    @field:JsonProperty("Availability") var availability: String? = null,
 
-    @JsonProperty("PacingMode")
-    var pacingMode: String? = null
+    @field:JsonProperty("PacingMode") var pacingMode: String? = null
 )
 

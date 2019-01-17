@@ -1,11 +1,10 @@
 package com.github.akraskovski.trade.desk.stub.web.response
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.github.akraskovski.trade.desk.stub.web.form.Money
 import java.time.LocalDateTime
 
 /**
- * POST Campaign request form.
+ * Campaign response model.
  */
 class CampaignResponse(
     @JsonProperty("CampaignId")
@@ -21,13 +20,13 @@ class CampaignResponse(
     var description: String? = null,
 
     @JsonProperty("Budget")
-    var budget: Money? = null,
+    var budget: MoneyResponse? = null,
 
     @JsonProperty("BudgetInImpressions")
     var budgetInImpressions: Int? = null,
 
     @JsonProperty("DailyBudget")
-    var dailyBudget: Money? = null,
+    var dailyBudget: MoneyResponse? = null,
 
     @JsonProperty("DailyBudgetInImpressions")
     var dailyBudgetInImpressions: Int? = null,
