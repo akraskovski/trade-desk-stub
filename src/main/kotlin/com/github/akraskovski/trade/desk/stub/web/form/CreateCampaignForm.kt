@@ -1,7 +1,7 @@
 package com.github.akraskovski.trade.desk.stub.web.form
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import java.time.LocalDateTime
+import java.util.*
 import javax.validation.constraints.NotEmpty
 
 /**
@@ -22,9 +22,9 @@ class CreateCampaignForm(
 
     @field:JsonProperty("DailyBudgetInImpressions") var dailyBudgetInImpressions: Int? = null,
 
-    @field:JsonProperty("StartDate") var startDate: LocalDateTime? = null,
+    @field:JsonProperty("StartDate") var startDate: Date? = null,
 
-    @field:JsonProperty("EndDate") var endDate: LocalDateTime? = null,
+    @field:JsonProperty("EndDate") var endDate: Date? = null,
 
     @field:JsonProperty("Availability") var availability: String? = null,
 
