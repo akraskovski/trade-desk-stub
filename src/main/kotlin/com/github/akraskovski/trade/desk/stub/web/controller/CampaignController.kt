@@ -3,8 +3,8 @@ package com.github.akraskovski.trade.desk.stub.web.controller
 import com.github.akraskovski.trade.desk.stub.domain.repository.CampaignRepository
 import com.github.akraskovski.trade.desk.stub.web.converter.toDomain
 import com.github.akraskovski.trade.desk.stub.web.converter.toResponse
-import com.github.akraskovski.trade.desk.stub.web.form.CreateCampaignForm
-import com.github.akraskovski.trade.desk.stub.web.form.UpdateCampaignForm
+import com.github.akraskovski.trade.desk.stub.web.form.campaign.CreateCampaignForm
+import com.github.akraskovski.trade.desk.stub.web.form.campaign.UpdateCampaignForm
 import com.github.akraskovski.trade.desk.stub.web.response.CampaignResponse
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*

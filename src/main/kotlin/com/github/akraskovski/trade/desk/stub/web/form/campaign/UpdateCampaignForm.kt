@@ -1,6 +1,7 @@
-package com.github.akraskovski.trade.desk.stub.web.form
+package com.github.akraskovski.trade.desk.stub.web.form.campaign
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import com.github.akraskovski.trade.desk.stub.web.form.MoneyForm
 import java.util.*
 import javax.validation.constraints.NotEmpty
 
