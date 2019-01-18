@@ -1,11 +1,11 @@
-package com.github.akraskovski.trade.desk.stub.web.response.adgroup
+package com.github.akraskovski.trade.desk.stub.web.form.adgroup
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
- * AdGroupResponse.
+ * AdGroupUpdateForm.
  */
-class AdGroupResponse(
+class AdGroupUpdateForm(
     @field:JsonProperty("AdGroupId") var id: String,
 
     @field:JsonProperty("CampaignId") var campaignId: String? = null,
@@ -18,7 +18,7 @@ class AdGroupResponse(
 
     @field:JsonProperty("IndustryCategoryId") var industryCategoryId: Long? = null,
 
-    @field:JsonProperty("RTBAttributes") var rtbAttributes: AdGroupRTBAttributesResponse? = null,
+    @field:JsonProperty("RTBAttributes") var rtbAttributes: AdGroupRTBAttributesForm? = null,
 
     @field:JsonProperty("Availability") var availability: String? = null
 )
