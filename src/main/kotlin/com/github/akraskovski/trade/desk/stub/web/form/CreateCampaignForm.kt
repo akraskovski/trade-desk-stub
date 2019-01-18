@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty
  * POST Campaign request form.
  */
 class CreateCampaignForm(
-    @field:JsonProperty("AdvertiserId") @field:NotEmpty var advertiserId: String? = null,
+    @field:JsonProperty("AdvertiserId") var advertiserId: String? = null,
 
     @field:JsonProperty("CampaignName") @field:NotEmpty var name: String? = null,
 

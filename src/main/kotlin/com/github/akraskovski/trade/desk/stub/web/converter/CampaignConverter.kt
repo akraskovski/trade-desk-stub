@@ -36,8 +36,8 @@ fun UpdateCampaignForm.toDomain(): Campaign = Campaign(
     budgetInImpressions = budgetInImpressions,
     dailyBudget = dailyBudget?.toDomain(),
     dailyBudgetInImpressions = dailyBudgetInImpressions,
-    startDate = startDate,
-    endDate = endDate,
+    startDate = startDate?.toLocalDateTime(),
+    endDate = endDate?.toLocalDateTime(),
     availability = availability,
     pacingMode = pacingMode
 )
@@ -54,8 +54,8 @@ fun Campaign.toResponse(): CampaignResponse = CampaignResponse(
     budgetInImpressions = budgetInImpressions,
     dailyBudget = dailyBudget?.toResponse(),
     dailyBudgetInImpressions = dailyBudgetInImpressions,
-    startDate = startDate,
-    endDate = endDate,
+    startDate = startDate?.toDate(),
+    endDate = endDate?.toDate(),
     availability = availability,
     pacingMode = pacingMode
 )

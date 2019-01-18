@@ -10,3 +10,11 @@ import java.util.*
 fun Date.toLocalDateTime(): LocalDateTime = toInstant()
     .atZone(ZoneId.systemDefault())
     .toLocalDateTime()
+
+/**
+ * Converts LocalDateTime to the Date object.
+ */
+fun LocalDateTime.toDate(): Date = Date
+    .from(
+        atZone(ZoneId.systemDefault())
+            .toInstant())
