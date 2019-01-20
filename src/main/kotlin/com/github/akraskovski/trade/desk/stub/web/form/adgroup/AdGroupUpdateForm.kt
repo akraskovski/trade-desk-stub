@@ -1,12 +1,13 @@
 package com.github.akraskovski.trade.desk.stub.web.form.adgroup
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import javax.validation.constraints.NotBlank
 
 /**
  * AdGroupUpdateForm.
  */
 class AdGroupUpdateForm(
-    @field:JsonProperty("AdGroupId") var id: String,
+    @field:JsonProperty("AdGroupId") @field:NotBlank var id: String,
 
     @field:JsonProperty("CampaignId") var campaignId: String? = null,
 
