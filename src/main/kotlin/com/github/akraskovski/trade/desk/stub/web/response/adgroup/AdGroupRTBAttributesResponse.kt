@@ -1,7 +1,7 @@
 package com.github.akraskovski.trade.desk.stub.web.response.adgroup
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.github.akraskovski.trade.desk.stub.web.form.MoneyForm
+import com.github.akraskovski.trade.desk.stub.web.response.MoneyResponse
 
 /**
  * AdGroupRTBAttributesResponse.
@@ -9,9 +9,9 @@ import com.github.akraskovski.trade.desk.stub.web.form.MoneyForm
 class AdGroupRTBAttributesResponse(
     @field:JsonProperty("BudgetSettings") var budgetSettings: AdGroupBudgetSettingsResponse? = null,
 
-    @field:JsonProperty("BaseBidCPM") var baseBidCPM: MoneyForm? = null,
+    @field:JsonProperty("BaseBidCPM") var baseBidCPM: MoneyResponse? = null,
 
-    @field:JsonProperty("MaxBidCPM") var maxBidCPM: MoneyForm? = null,
+    @field:JsonProperty("MaxBidCPM") var maxBidCPM: MoneyResponse? = null,
 
     @field:JsonProperty("CreativeIds") var creativeIds: List<String>? = null,
 

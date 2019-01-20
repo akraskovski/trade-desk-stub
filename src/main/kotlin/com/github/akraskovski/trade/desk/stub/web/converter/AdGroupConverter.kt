@@ -2,7 +2,13 @@ package com.github.akraskovski.trade.desk.stub.web.converter
 
 import com.github.akraskovski.trade.desk.stub.domain.model.*
 import com.github.akraskovski.trade.desk.stub.web.form.adgroup.*
+import com.github.akraskovski.trade.desk.stub.web.response.adgroup.AdGroupBudgetSettingsResponse
+import com.github.akraskovski.trade.desk.stub.web.response.adgroup.AdGroupLanguageTargetingResponse
+import com.github.akraskovski.trade.desk.stub.web.response.adgroup.AdGroupRTBAttributesResponse
 import com.github.akraskovski.trade.desk.stub.web.response.adgroup.AdGroupResponse
+import com.github.akraskovski.trade.desk.stub.web.response.adgroup.BidAdjustmentResponse
+import com.github.akraskovski.trade.desk.stub.web.response.adgroup.BidAdjustmentsResponse
+import com.github.akraskovski.trade.desk.stub.web.response.adgroup.OSAdjustmentsResponse
 import java.util.*
 
 /**
@@ -69,6 +75,9 @@ fun OSAdjustmentsForm.toDomain(): OSAdjustments = OSAdjustments(
     defaultAdjustment = defaultAdjustment
 )
 
+/**
+ *  Converts from the create form to the domain object.
+ */
 fun AdGroupLanguageTargetingForm.toDomain(): AdGroupLanguageTargeting = AdGroupLanguageTargeting(
     languageTargetingAdjustments = languageTargetingAdjustments?.toDomain()
 )
@@ -94,7 +103,60 @@ fun AdGroup.toResponse(): AdGroupResponse = AdGroupResponse(
     description = description,
     isEnabled = isEnabled,
     industryCategoryId = industryCategoryId,
-    //todo add full response converter
-//    rtbAttributes = rtbAttributes.toResponse(),
+    rtbAttributes = rtbAttributes?.toResponse(),
     availability = availability
+)
+
+/**
+ * Converts from the domain object to the response object.
+ */
+fun AdGroupRTBAttributes.toResponse(): AdGroupRTBAttributesResponse = AdGroupRTBAttributesResponse(
+        budgetSettings = budgetSettings?.toResponse(),
+        baseBidCPM = baseBidCPM?.toResponse(),
+        maxBidCPM = maxBidCPM?.toResponse(),
+        creativeIds = creativeIds,
+        geoSegmentAdjustments = geoSegmentAdjustments?.map { it.toResponse() },
+        osFamilyAndVersionAdjustments = osFamilyAndVersionAdjustments?.toResponse(),
+        deviceTypeAdjustments = deviceTypeAdjustments?.toResponse(),
+        languageTargeting = languageTargeting?.toResponse()
+)
+
+/**
+ * Converts from the domain object to the response object.
+ */
+fun <ID> BidAdjustment<ID>.toResponse(): BidAdjustmentResponse<ID> = BidAdjustmentResponse(id, adjustment)
+
+/**
+ * Converts from the domain object to the response object.
+ */
+fun <ID> BidAdjustments<ID>.toResponse(): BidAdjustmentsResponse<ID> = BidAdjustmentsResponse(
+        defaultAdjustment,
+        adjustments?.map { it.toResponse() }
+)
+
+/**
+ * Converts from the domain object to the response object.
+ */
+fun OSAdjustments.toResponse(): OSAdjustmentsResponse = OSAdjustmentsResponse(
+        osVersionAdjustments = osFamilyAdjustments?.map { it.toResponse() },
+        osFamilyAdjustments = osFamilyAdjustments?.map { it.toResponse() },
+        defaultAdjustment = defaultAdjustment
+)
+
+/**
+ *  Converts from the domain object to the response object.
+ */
+fun AdGroupLanguageTargeting.toResponse(): AdGroupLanguageTargetingResponse = AdGroupLanguageTargetingResponse(
+        languageTargetingAdjustments = languageTargetingAdjustments?.toResponse()
+)
+
+/**
+ * Converts from the domain object to the response object.
+ */
+fun AdGroupBudgetSettings.toResponse(): AdGroupBudgetSettingsResponse = AdGroupBudgetSettingsResponse(
+        budget = budget?.toResponse(),
+        budgetInImpressions = budgetInImpressions,
+        dailyBudget = dailyBudget?.toResponse(),
+        dailyBudgetInImpressions = dailyBudgetInImpressions,
+        pacingMode = pacingMode
 )
