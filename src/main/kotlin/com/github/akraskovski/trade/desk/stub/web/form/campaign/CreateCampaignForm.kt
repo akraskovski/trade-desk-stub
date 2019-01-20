@@ -1,6 +1,7 @@
 package com.github.akraskovski.trade.desk.stub.web.form.campaign
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import com.github.akraskovski.trade.desk.stub.domain.model.Availability
 import com.github.akraskovski.trade.desk.stub.web.form.MoneyForm
 import java.util.*
 import javax.validation.constraints.NotEmpty
@@ -27,7 +28,7 @@ class CreateCampaignForm(
 
     @field:JsonProperty("EndDate") var endDate: Date? = null,
 
-    @field:JsonProperty("Availability") var availability: String? = null,
+    @field:JsonProperty("Availability") var availability: Availability? = null,
 
     @field:JsonProperty("PacingMode") var pacingMode: String? = null
 )

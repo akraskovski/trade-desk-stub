@@ -1,10 +1,12 @@
 package com.github.akraskovski.trade.desk.stub.domain.model
 
 import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
 
 /**
  * AdGroup.
  */
+@Document
 class AdGroup(
     @field:Id var id: String,
     var campaignId: String? = null,
