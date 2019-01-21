@@ -1,6 +1,7 @@
 package com.github.akraskovski.trade.desk.stub.web.response.adgroup
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import com.github.akraskovski.trade.desk.stub.domain.model.Availability
 
 /**
  * AdGroupResponse.
@@ -20,5 +21,5 @@ class AdGroupResponse(
 
     @field:JsonProperty("RTBAttributes") var rtbAttributes: AdGroupRTBAttributesResponse? = null,
 
-    @field:JsonProperty("Availability") var availability: String? = null
+    @field:JsonProperty("Availability") var availability: Availability? = null
 )

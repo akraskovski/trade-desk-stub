@@ -15,5 +15,5 @@ class AdGroup(
     var isEnabled: Boolean? = null,
     var industryCategoryId: Long? = null,
     var rtbAttributes: AdGroupRTBAttributes? = null,
-    var availability: String? = null
+    var availability: Availability? = null
 )
