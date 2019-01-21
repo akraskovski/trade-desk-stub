@@ -7,8 +7,8 @@ import javax.validation.constraints.NotBlank
  * ImageAttributesForm.
  */
 class ImageAttributesForm(
-    @field:JsonProperty("ImageContent") @field:NotBlank var imageContent: String,
-    @field:JsonProperty("AdTechnologyIds") var adTechnologyIds: List<String> = mutableListOf(),
+    @field:JsonProperty("ImageContent") @field:NotBlank var imageContent: String? = null,
+    @field:JsonProperty("AdTechnologyIds") var adTechnologyIds: List<String>? = mutableListOf(),
     @field:JsonProperty("RightMediaOfferTypeId") var rightMediaOfferTypeId: Long? = null,
     @field:JsonProperty("LandingPageUrl") var landingPageUrl: String? = null,
     @field:JsonProperty("ClickthroughUrl") var clickthroughUrl: String? = null,
