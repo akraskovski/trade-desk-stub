@@ -4,13 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty
 import com.github.akraskovski.trade.desk.stub.domain.model.Availability
 import com.github.akraskovski.trade.desk.stub.web.form.MoneyForm
 import java.util.*
+import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotEmpty
 
 /**
  * POST Campaign request form.
  */
 class CreateCampaignForm(
-    @field:JsonProperty("AdvertiserId") var advertiserId: String? = null,
+    @field:JsonProperty("AdvertiserId") @field:NotBlank var advertiserId: String? = null,
 
     @field:JsonProperty("CampaignName") @field:NotEmpty var name: String? = null,
 

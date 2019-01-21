@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank
 class AdGroupUpdateForm(
     @field:JsonProperty("AdGroupId") @field:NotBlank var id: String,
 
-    @field:JsonProperty("CampaignId") var campaignId: String? = null,
+    @field:JsonProperty("CampaignId") @field:NotBlank var campaignId: String? = null,
 
     @field:JsonProperty("AdGroupName") var name: String? = null,
 
