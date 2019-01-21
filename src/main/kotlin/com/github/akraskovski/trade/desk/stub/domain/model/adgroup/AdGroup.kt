@@ -1,5 +1,6 @@
-package com.github.akraskovski.trade.desk.stub.domain.model
+package com.github.akraskovski.trade.desk.stub.domain.model.adgroup
 
+import com.github.akraskovski.trade.desk.stub.domain.model.Availability
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 

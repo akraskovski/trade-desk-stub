@@ -1,7 +1,7 @@
 package com.github.akraskovski.trade.desk.stub.domain.repository
 
 import com.github.akraskovski.trade.desk.stub.domain.model.Availability
-import com.github.akraskovski.trade.desk.stub.domain.model.Campaign
+import com.github.akraskovski.trade.desk.stub.domain.model.campaign.Campaign
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.mongodb.repository.Query

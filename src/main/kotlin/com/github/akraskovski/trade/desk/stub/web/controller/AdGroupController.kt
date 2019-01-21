@@ -1,6 +1,6 @@
 package com.github.akraskovski.trade.desk.stub.web.controller
 
-import com.github.akraskovski.trade.desk.stub.domain.model.AdGroup
+import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.AdGroup
 import com.github.akraskovski.trade.desk.stub.domain.repository.AdGroupRepository
 import com.github.akraskovski.trade.desk.stub.web.converter.toDomain
 import com.github.akraskovski.trade.desk.stub.web.converter.toResponse

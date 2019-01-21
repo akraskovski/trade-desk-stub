@@ -1,6 +1,6 @@
 package com.github.akraskovski.trade.desk.stub.web.converter
 
-import com.github.akraskovski.trade.desk.stub.domain.model.*
+import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.*
 import com.github.akraskovski.trade.desk.stub.web.form.adgroup.*
 import com.github.akraskovski.trade.desk.stub.web.response.adgroup.AdGroupBudgetSettingsResponse
 import com.github.akraskovski.trade.desk.stub.web.response.adgroup.AdGroupLanguageTargetingResponse

@@ -1,5 +1,7 @@
-package com.github.akraskovski.trade.desk.stub.domain.model
+package com.github.akraskovski.trade.desk.stub.domain.model.campaign
 
+import com.github.akraskovski.trade.desk.stub.domain.model.Availability
+import com.github.akraskovski.trade.desk.stub.domain.model.Money
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDateTime

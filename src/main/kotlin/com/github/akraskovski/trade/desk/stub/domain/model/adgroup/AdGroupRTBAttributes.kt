@@ -1,4 +1,6 @@
-package com.github.akraskovski.trade.desk.stub.domain.model
+package com.github.akraskovski.trade.desk.stub.domain.model.adgroup
+
+import com.github.akraskovski.trade.desk.stub.domain.model.Money
 
 /**
  * AdGroupRTBAttributes.

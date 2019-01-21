@@ -1,6 +1,6 @@
 package com.github.akraskovski.trade.desk.stub.web.converter
 
-import com.github.akraskovski.trade.desk.stub.domain.model.Campaign
+import com.github.akraskovski.trade.desk.stub.domain.model.campaign.Campaign
 import com.github.akraskovski.trade.desk.stub.web.form.campaign.CreateCampaignForm
 import com.github.akraskovski.trade.desk.stub.web.form.campaign.UpdateCampaignForm
 import com.github.akraskovski.trade.desk.stub.web.response.CampaignResponse

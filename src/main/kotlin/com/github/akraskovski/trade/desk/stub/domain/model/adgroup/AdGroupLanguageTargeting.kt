@@ -1,4 +1,4 @@
-package com.github.akraskovski.trade.desk.stub.domain.model
+package com.github.akraskovski.trade.desk.stub.domain.model.adgroup
 
 /**
  * AdGroupLanguageTargetingForm.
