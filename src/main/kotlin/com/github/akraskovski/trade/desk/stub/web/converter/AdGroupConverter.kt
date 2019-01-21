@@ -1,7 +1,20 @@
 package com.github.akraskovski.trade.desk.stub.web.converter
 
-import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.*
-import com.github.akraskovski.trade.desk.stub.web.form.adgroup.*
+import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.AdGroup
+import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.AdGroupBudgetSettings
+import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.AdGroupLanguageTargeting
+import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.AdGroupRTBAttributes
+import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.BidAdjustment
+import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.BidAdjustments
+import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.OSAdjustments
+import com.github.akraskovski.trade.desk.stub.web.form.adgroup.AdGroupBudgetSettingsForm
+import com.github.akraskovski.trade.desk.stub.web.form.adgroup.AdGroupCreateForm
+import com.github.akraskovski.trade.desk.stub.web.form.adgroup.AdGroupLanguageTargetingForm
+import com.github.akraskovski.trade.desk.stub.web.form.adgroup.AdGroupRTBAttributesForm
+import com.github.akraskovski.trade.desk.stub.web.form.adgroup.AdGroupUpdateForm
+import com.github.akraskovski.trade.desk.stub.web.form.adgroup.BidAdjustmentForm
+import com.github.akraskovski.trade.desk.stub.web.form.adgroup.BidAdjustmentsForm
+import com.github.akraskovski.trade.desk.stub.web.form.adgroup.OSAdjustmentsForm
 import com.github.akraskovski.trade.desk.stub.web.response.adgroup.AdGroupBudgetSettingsResponse
 import com.github.akraskovski.trade.desk.stub.web.response.adgroup.AdGroupLanguageTargetingResponse
 import com.github.akraskovski.trade.desk.stub.web.response.adgroup.AdGroupRTBAttributesResponse
@@ -111,14 +124,14 @@ fun AdGroup.toResponse(): AdGroupResponse = AdGroupResponse(
  * Converts from the domain object to the response object.
  */
 fun AdGroupRTBAttributes.toResponse(): AdGroupRTBAttributesResponse = AdGroupRTBAttributesResponse(
-        budgetSettings = budgetSettings?.toResponse(),
-        baseBidCPM = baseBidCPM?.toResponse(),
-        maxBidCPM = maxBidCPM?.toResponse(),
-        creativeIds = creativeIds,
-        geoSegmentAdjustments = geoSegmentAdjustments?.map { it.toResponse() },
-        osFamilyAndVersionAdjustments = osFamilyAndVersionAdjustments?.toResponse(),
-        deviceTypeAdjustments = deviceTypeAdjustments?.toResponse(),
-        languageTargeting = languageTargeting?.toResponse()
+    budgetSettings = budgetSettings?.toResponse(),
+    baseBidCPM = baseBidCPM?.toResponse(),
+    maxBidCPM = maxBidCPM?.toResponse(),
+    creativeIds = creativeIds,
+    geoSegmentAdjustments = geoSegmentAdjustments?.map { it.toResponse() },
+    osFamilyAndVersionAdjustments = osFamilyAndVersionAdjustments?.toResponse(),
+    deviceTypeAdjustments = deviceTypeAdjustments?.toResponse(),
+    languageTargeting = languageTargeting?.toResponse()
 )
 
 /**
@@ -130,33 +143,33 @@ fun <ID> BidAdjustment<ID>.toResponse(): BidAdjustmentResponse<ID> = BidAdjustme
  * Converts from the domain object to the response object.
  */
 fun <ID> BidAdjustments<ID>.toResponse(): BidAdjustmentsResponse<ID> = BidAdjustmentsResponse(
-        defaultAdjustment,
-        adjustments?.map { it.toResponse() }
+    defaultAdjustment,
+    adjustments?.map { it.toResponse() }
 )
 
 /**
  * Converts from the domain object to the response object.
  */
 fun OSAdjustments.toResponse(): OSAdjustmentsResponse = OSAdjustmentsResponse(
-        osVersionAdjustments = osFamilyAdjustments?.map { it.toResponse() },
-        osFamilyAdjustments = osFamilyAdjustments?.map { it.toResponse() },
-        defaultAdjustment = defaultAdjustment
+    osVersionAdjustments = osFamilyAdjustments?.map { it.toResponse() },
+    osFamilyAdjustments = osFamilyAdjustments?.map { it.toResponse() },
+    defaultAdjustment = defaultAdjustment
 )
 
 /**
  *  Converts from the domain object to the response object.
  */
 fun AdGroupLanguageTargeting.toResponse(): AdGroupLanguageTargetingResponse = AdGroupLanguageTargetingResponse(
-        languageTargetingAdjustments = languageTargetingAdjustments?.toResponse()
+    languageTargetingAdjustments = languageTargetingAdjustments?.toResponse()
 )
 
 /**
  * Converts from the domain object to the response object.
  */
 fun AdGroupBudgetSettings.toResponse(): AdGroupBudgetSettingsResponse = AdGroupBudgetSettingsResponse(
-        budget = budget?.toResponse(),
-        budgetInImpressions = budgetInImpressions,
-        dailyBudget = dailyBudget?.toResponse(),
-        dailyBudgetInImpressions = dailyBudgetInImpressions,
-        pacingMode = pacingMode
+    budget = budget?.toResponse(),
+    budgetInImpressions = budgetInImpressions,
+    dailyBudget = dailyBudget?.toResponse(),
+    dailyBudgetInImpressions = dailyBudgetInImpressions,
+    pacingMode = pacingMode
 )

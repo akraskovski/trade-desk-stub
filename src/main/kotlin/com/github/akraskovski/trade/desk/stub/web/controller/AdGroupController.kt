@@ -7,12 +7,16 @@ import com.github.akraskovski.trade.desk.stub.web.converter.toResponse
 import com.github.akraskovski.trade.desk.stub.web.form.adgroup.AdGroupCreateForm
 import com.github.akraskovski.trade.desk.stub.web.form.adgroup.AdGroupUpdateForm
 import com.github.akraskovski.trade.desk.stub.web.form.search.AdGroupSearchQuery
-import com.github.akraskovski.trade.desk.stub.web.form.search.SearchService
-import com.github.akraskovski.trade.desk.stub.web.form.search.toResponse
 import com.github.akraskovski.trade.desk.stub.web.response.adgroup.AdGroupResponse
 import com.github.akraskovski.trade.desk.stub.web.response.search.PageResponse
+import com.github.akraskovski.trade.desk.stub.web.service.SearchService
+import com.github.akraskovski.trade.desk.stub.web.service.toResponse
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
+import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
 import javax.validation.Valid
 
 /**

@@ -7,10 +7,10 @@ import com.github.akraskovski.trade.desk.stub.web.converter.toResponse
 import com.github.akraskovski.trade.desk.stub.web.form.campaign.CreateCampaignForm
 import com.github.akraskovski.trade.desk.stub.web.form.campaign.UpdateCampaignForm
 import com.github.akraskovski.trade.desk.stub.web.form.search.CampaignSearchQuery
-import com.github.akraskovski.trade.desk.stub.web.form.search.SearchService
-import com.github.akraskovski.trade.desk.stub.web.form.search.toResponse
 import com.github.akraskovski.trade.desk.stub.web.response.CampaignResponse
 import com.github.akraskovski.trade.desk.stub.web.response.search.PageResponse
+import com.github.akraskovski.trade.desk.stub.web.service.SearchService
+import com.github.akraskovski.trade.desk.stub.web.service.toResponse
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
