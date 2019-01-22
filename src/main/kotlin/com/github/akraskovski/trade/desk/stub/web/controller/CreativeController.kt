@@ -6,7 +6,6 @@ import com.github.akraskovski.trade.desk.stub.web.form.search.CreativeSearchQuer
 import com.github.akraskovski.trade.desk.stub.web.response.creative.CreativeResponse
 import com.github.akraskovski.trade.desk.stub.web.response.search.PageResponse
 import com.github.akraskovski.trade.desk.stub.web.service.CreativeService
-import com.github.akraskovski.trade.desk.stub.web.service.SearchService
 import com.github.akraskovski.trade.desk.stub.web.service.toResponse
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
@@ -20,10 +19,7 @@ import javax.validation.Valid
  */
 @RestController
 @RequestMapping("/creative")
-class CreativeController(
-    private val creativeService: CreativeService,
-    private val searchService: SearchService
-) {
+class CreativeController(private val creativeService: CreativeService) {
 
     /**
      * Creates a new creative.
