@@ -1,5 +1,6 @@
 package com.github.akraskovski.trade.desk.stub.web.converter
 
+import com.github.akraskovski.trade.desk.stub.domain.model.Availability
 import com.github.akraskovski.trade.desk.stub.domain.model.creative.ImageCreative
 import com.github.akraskovski.trade.desk.stub.web.form.creative.CreativeForm
 import com.github.akraskovski.trade.desk.stub.web.response.creative.CreativeResponse
@@ -15,7 +16,7 @@ fun CreativeForm.toImageCreative(): ImageCreative =
         advertiserId = advertiserId,
         name = name,
         description = description,
-        availability = availability,
+        availability = availability ?: Availability.Available,
         imageContent = imageAttributes?.imageContent,
         adTechnologyIds = imageAttributes?.adTechnologyIds,
         rightMediaOfferTypeId = imageAttributes?.rightMediaOfferTypeId,

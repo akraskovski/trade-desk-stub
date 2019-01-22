@@ -1,5 +1,6 @@
 package com.github.akraskovski.trade.desk.stub.web.converter
 
+import com.github.akraskovski.trade.desk.stub.domain.model.Availability
 import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.AdGroup
 import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.AdGroupBudgetSettings
 import com.github.akraskovski.trade.desk.stub.domain.model.adgroup.AdGroupLanguageTargeting
@@ -35,7 +36,7 @@ fun AdGroupCreateForm.toDomain(): AdGroup = AdGroup(
     isEnabled = isEnabled,
     industryCategoryId = industryCategoryId,
     rtbAttributes = rtbAttributes?.toDomain(),
-    availability = availability
+    availability = availability ?: Availability.Available
 )
 
 /**
@@ -49,7 +50,7 @@ fun AdGroupUpdateForm.toDomain(): AdGroup = AdGroup(
     isEnabled = isEnabled,
     industryCategoryId = industryCategoryId,
     rtbAttributes = rtbAttributes?.toDomain(),
-    availability = availability
+    availability = availability ?: Availability.Available
 )
 
 /**

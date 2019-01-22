@@ -1,5 +1,6 @@
 package com.github.akraskovski.trade.desk.stub.web.converter
 
+import com.github.akraskovski.trade.desk.stub.domain.model.Availability
 import com.github.akraskovski.trade.desk.stub.domain.model.campaign.Campaign
 import com.github.akraskovski.trade.desk.stub.web.form.campaign.CreateCampaignForm
 import com.github.akraskovski.trade.desk.stub.web.form.campaign.UpdateCampaignForm
@@ -20,7 +21,7 @@ fun CreateCampaignForm.toDomain(): Campaign = Campaign(
     dailyBudgetInImpressions = dailyBudgetInImpressions,
     startDate = startDate?.toLocalDateTime(),
     endDate = endDate?.toLocalDateTime(),
-    availability = availability,
+    availability = availability ?: Availability.Available,
     pacingMode = pacingMode
 )
 
@@ -38,7 +39,7 @@ fun UpdateCampaignForm.toDomain(): Campaign = Campaign(
     dailyBudgetInImpressions = dailyBudgetInImpressions,
     startDate = startDate?.toLocalDateTime(),
     endDate = endDate?.toLocalDateTime(),
-    availability = availability,
+    availability = availability ?: Availability.Available,
     pacingMode = pacingMode
 )
 
