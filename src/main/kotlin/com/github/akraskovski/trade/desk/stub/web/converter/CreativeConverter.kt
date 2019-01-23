@@ -36,7 +36,7 @@ fun CreativeForm.toImageCreative(): ImageCreative =
  */
 fun ImageCreative.toResponse(): CreativeResponse =
     CreativeResponse(
-        id = UUID.randomUUID().toString(),
+        id = id,
         advertiserId = advertiserId,
         name = name,
         description = description,
