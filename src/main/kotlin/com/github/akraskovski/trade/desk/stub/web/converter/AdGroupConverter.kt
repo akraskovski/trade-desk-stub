@@ -84,7 +84,7 @@ fun <ID> BidAdjustmentsForm<ID>.toDomain(): BidAdjustments<ID> = BidAdjustments(
  * Converts from the create form to the domain object.
  */
 fun OSAdjustmentsForm.toDomain(): OSAdjustments = OSAdjustments(
-    osVersionAdjustments = osFamilyAdjustments?.map { it.toDomain() },
+    osVersionAdjustments = osVersionAdjustments?.map { it.toDomain() },
     osFamilyAdjustments = osFamilyAdjustments?.map { it.toDomain() },
     defaultAdjustment = defaultAdjustment
 )
