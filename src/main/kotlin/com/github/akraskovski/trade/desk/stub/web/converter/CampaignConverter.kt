@@ -5,58 +5,25 @@ import com.github.akraskovski.trade.desk.stub.domain.model.campaign.Campaign
 import com.github.akraskovski.trade.desk.stub.web.form.campaign.CreateCampaignForm
 import com.github.akraskovski.trade.desk.stub.web.form.campaign.UpdateCampaignForm
 import com.github.akraskovski.trade.desk.stub.web.response.CampaignResponse
+import com.github.dozermapper.core.Mapper
 import java.util.*
 
 /**
- * Converts from the create form to the domain object.
+ * Extension map function from request form to the domain objects.
  */
-fun CreateCampaignForm.toDomain(): Campaign = Campaign(
-    id = UUID.randomUUID().toString(),
-    advertiserId = advertiserId,
-    name = name,
-    description = description,
-    budget = budget?.toDomain(),
-    budgetInImpressions = budgetInImpressions,
-    dailyBudget = dailyBudget?.toDomain(),
-    dailyBudgetInImpressions = dailyBudgetInImpressions,
-    startDate = startDate?.toLocalDateTime(),
-    endDate = endDate?.toLocalDateTime(),
-    availability = availability ?: Availability.Available,
-    pacingMode = pacingMode
-)
+fun Mapper.map(createCampaignForm: CreateCampaignForm): Campaign = map(createCampaignForm, Campaign::class.java)
+    .apply {
+        id = UUID.randomUUID().toString()
+        availability ?: Availability.Available
+    }
 
 /**
- * Converts from the update form to the domain object.
+ * Extension map function from request form to the domain objects.
  */
-fun UpdateCampaignForm.toDomain(): Campaign = Campaign(
-    id = id,
-    advertiserId = advertiserId,
-    name = name,
-    description = description,
-    budget = budget?.toDomain(),
-    budgetInImpressions = budgetInImpressions,
-    dailyBudget = dailyBudget?.toDomain(),
-    dailyBudgetInImpressions = dailyBudgetInImpressions,
-    startDate = startDate?.toLocalDateTime(),
-    endDate = endDate?.toLocalDateTime(),
-    availability = availability ?: Availability.Available,
-    pacingMode = pacingMode
-)
+fun Mapper.map(updateCampaignForm: UpdateCampaignForm): Campaign = map(updateCampaignForm, Campaign::class.java)
+    .apply { availability ?: Availability.Available }
 
 /**
- * Converts from the domain object to the response object.
+ * Extension map function from domain to the response objects.
  */
-fun Campaign.toResponse(): CampaignResponse = CampaignResponse(
-    id = id,
-    advertiserId = advertiserId,
-    name = name,
-    description = description,
-    budget = budget?.toResponse(),
-    budgetInImpressions = budgetInImpressions,
-    dailyBudget = dailyBudget?.toResponse(),
-    dailyBudgetInImpressions = dailyBudgetInImpressions,
-    startDate = startDate?.toDate(),
-    endDate = endDate?.toDate(),
-    availability = availability,
-    pacingMode = pacingMode
-)
+fun Mapper.map(campaign: Campaign): CampaignResponse = map(campaign, CampaignResponse::class.java)

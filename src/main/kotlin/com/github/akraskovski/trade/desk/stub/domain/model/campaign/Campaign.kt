@@ -4,7 +4,7 @@ import com.github.akraskovski.trade.desk.stub.domain.model.Availability
 import com.github.akraskovski.trade.desk.stub.domain.model.Money
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
-import java.time.LocalDateTime
+import java.util.*
 
 /**
  * Domain Campaign object.
@@ -19,8 +19,8 @@ class Campaign(
     var budgetInImpressions: Int? = null,
     var dailyBudget: Money? = null,
     var dailyBudgetInImpressions: Int? = null,
-    var startDate: LocalDateTime? = null,
-    var endDate: LocalDateTime? = null,
+    var startDate: Date? = null,
+    var endDate: Date? = null,
     var availability: Availability? = null,
     var pacingMode: String? = null
 )

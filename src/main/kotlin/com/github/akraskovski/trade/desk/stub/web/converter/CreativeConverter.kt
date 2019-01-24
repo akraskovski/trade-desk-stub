@@ -4,58 +4,19 @@ import com.github.akraskovski.trade.desk.stub.domain.model.Availability
 import com.github.akraskovski.trade.desk.stub.domain.model.creative.ImageCreative
 import com.github.akraskovski.trade.desk.stub.web.form.creative.CreativeForm
 import com.github.akraskovski.trade.desk.stub.web.response.creative.CreativeResponse
-import com.github.akraskovski.trade.desk.stub.web.response.creative.ImageAttributesResponse
+import com.github.dozermapper.core.Mapper
 import java.util.*
 
 /**
- * Converts from the request form to the domain object.
+ * Extension map function from request form to the domain objects.
  */
-fun CreativeForm.toImageCreative(): ImageCreative =
-    ImageCreative(
-        id = UUID.randomUUID().toString(),
-        advertiserId = advertiserId,
-        name = name,
-        description = description,
-        availability = availability ?: Availability.Available,
-        imageContent = imageAttributes?.imageContent,
-        adTechnologyIds = imageAttributes?.adTechnologyIds,
-        rightMediaOfferTypeId = imageAttributes?.rightMediaOfferTypeId,
-        landingPageUrl = imageAttributes?.landingPageUrl,
-        clickthroughUrl = imageAttributes?.clickthroughUrl,
-        thirdPartyTrackingTags = imageAttributes?.thirdPartyTrackingTags,
-        thirdPartyImpressionTrackingUrl = imageAttributes?.thirdPartyImpressionTrackingUrl,
-        thirdPartyImpressionTrackingUrl2 = imageAttributes?.thirdPartyImpressionTrackingUrl2,
-        thirdPartyImpressionTrackingUrl3 = imageAttributes?.thirdPartyImpressionTrackingUrl3,
-        isSecurable = imageAttributes?.isSecurable,
-        adServerName = imageAttributes?.adServerName,
-        adServerCreativeId = imageAttributes?.adServerCreativeId
-    )
+fun Mapper.map(creativeForm: CreativeForm): ImageCreative = map(creativeForm, ImageCreative::class.java)
+    .apply {
+        id = UUID.randomUUID().toString()
+        availability ?: Availability.Available
+    }
 
 /**
- * Converts from the domain object to the response object.
+ * Extension map function from domain to the response objects.
  */
-fun ImageCreative.toResponse(): CreativeResponse =
-    CreativeResponse(
-        id = id,
-        advertiserId = advertiserId,
-        name = name,
-        description = description,
-        availability = availability,
-        imageAttributes = ImageAttributesResponse(
-            imageContent = imageContent,
-            adTechnologyIds = adTechnologyIds,
-            rightMediaOfferTypeId = rightMediaOfferTypeId,
-            width = width,
-            height = height,
-            imageUrl = imageUrl,
-            landingPageUrl = landingPageUrl,
-            clickthroughUrl = clickthroughUrl,
-            thirdPartyTrackingTags = thirdPartyTrackingTags,
-            thirdPartyImpressionTrackingUrl = thirdPartyImpressionTrackingUrl,
-            thirdPartyImpressionTrackingUrl2 = thirdPartyImpressionTrackingUrl2,
-            thirdPartyImpressionTrackingUrl3 = thirdPartyImpressionTrackingUrl3,
-            isSecurable = isSecurable,
-            adServerName = adServerName,
-            adServerCreativeId = adServerCreativeId
-        )
-    )
+fun Mapper.map(imageCreative: ImageCreative): CreativeResponse = map(imageCreative, CreativeResponse::class.java)
