@@ -47,7 +47,7 @@ class CampaignController(
      * Search the campaigns for a given advertiser with predefined criteria.
      */
     @PostMapping("/query/advertiser")
-    fun search(@RequestBody @Valid searchQuery: CampaignSearchQuery): ResponseEntity<PageResponse<CampaignResponse>>? =
+    fun search(@RequestBody @Valid searchQuery: CampaignSearchQuery): ResponseEntity<PageResponse<CampaignResponse>> =
         ResponseEntity
             .ok(searchService
                 .searchByParent(searchQuery, campaignRepository)
