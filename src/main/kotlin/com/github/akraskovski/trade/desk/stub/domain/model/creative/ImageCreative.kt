@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document
  */
 @Document
 class ImageCreative(
-    @field:Id val id: String,
+    @field:Id var id: String,
     var advertiserId: String? = null,
     var name: String? = null,
     var imageContent: String? = null,
