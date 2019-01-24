@@ -1,6 +1,8 @@
 package com.github.akraskovski.trade.desk.stub.web.configuration
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.github.dozermapper.core.DozerBeanMapperBuilder
+import com.github.dozermapper.core.Mapper
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Primary
@@ -27,4 +29,10 @@ class WebConfiguration {
             .dateFormat(SimpleDateFormat(DATE_FORMAT))
             .failOnUnknownProperties(false)
             .build()
+
+    /**
+     * Dozer bean mapper.
+     */
+    @Bean
+    fun dozerBeanMapper(): Mapper = DozerBeanMapperBuilder.buildDefault()
 }
