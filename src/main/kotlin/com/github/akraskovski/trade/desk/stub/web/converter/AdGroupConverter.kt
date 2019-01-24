@@ -152,7 +152,7 @@ fun <ID> BidAdjustments<ID>.toResponse(): BidAdjustmentsResponse<ID> = BidAdjust
  * Converts from the domain object to the response object.
  */
 fun OSAdjustments.toResponse(): OSAdjustmentsResponse = OSAdjustmentsResponse(
-    osVersionAdjustments = osFamilyAdjustments?.map { it.toResponse() },
+    osVersionAdjustments = osVersionAdjustments?.map { it.toResponse() },
     osFamilyAdjustments = osFamilyAdjustments?.map { it.toResponse() },
     defaultAdjustment = defaultAdjustment
 )
