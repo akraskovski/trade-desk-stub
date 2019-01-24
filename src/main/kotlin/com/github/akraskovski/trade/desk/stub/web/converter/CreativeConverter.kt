@@ -13,7 +13,7 @@ import java.util.*
 fun Mapper.map(creativeForm: CreativeForm): ImageCreative = map(creativeForm, ImageCreative::class.java)
     .apply {
         id = UUID.randomUUID().toString()
-        availability ?: Availability.Available
+        availability = availability ?: Availability.Available
     }
 
 /**

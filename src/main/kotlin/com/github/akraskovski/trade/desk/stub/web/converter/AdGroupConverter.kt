@@ -14,14 +14,14 @@ import java.util.*
 fun Mapper.map(adGroupCreateForm: AdGroupCreateForm): AdGroup = map(adGroupCreateForm, AdGroup::class.java)
     .apply {
         id = UUID.randomUUID().toString()
-        availability ?: Availability.Available
+        availability = availability ?: Availability.Available
     }
 
 /**
  * Extension map function from request form to the domain objects.
  */
 fun Mapper.map(adGroupUpdateForm: AdGroupUpdateForm): AdGroup = map(adGroupUpdateForm, AdGroup::class.java)
-    .apply { availability ?: Availability.Available }
+    .apply { availability = availability ?: Availability.Available }
 
 /**
  * Extension map function from domain to the response objects.

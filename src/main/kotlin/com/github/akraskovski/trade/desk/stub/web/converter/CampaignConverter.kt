@@ -14,14 +14,14 @@ import java.util.*
 fun Mapper.map(createCampaignForm: CreateCampaignForm): Campaign = map(createCampaignForm, Campaign::class.java)
     .apply {
         id = UUID.randomUUID().toString()
-        availability ?: Availability.Available
+        availability = availability ?: Availability.Available
     }
 
 /**
  * Extension map function from request form to the domain objects.
  */
 fun Mapper.map(updateCampaignForm: UpdateCampaignForm): Campaign = map(updateCampaignForm, Campaign::class.java)
-    .apply { availability ?: Availability.Available }
+    .apply { availability = availability ?: Availability.Available }
 
 /**
  * Extension map function from domain to the response objects.

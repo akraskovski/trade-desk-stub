@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document
  */
 @Document
 class AdGroup(
-    @field:Id var id: String,
+    @field:Id var id: String? = null,
     var campaignId: String? = null,
     var name: String? = null,
     var description: String? = null,
