@@ -1,6 +1,7 @@
 package com.github.akraskovski.trade.desk.stub.web.mapping
 
 import com.github.akraskovski.trade.desk.stub.domain.model.creative.ImageCreative
+import com.github.akraskovski.trade.desk.stub.domain.model.creative.VideoCreative
 import com.github.akraskovski.trade.desk.stub.web.form.creative.CreativeForm
 import com.github.akraskovski.trade.desk.stub.web.response.creative.CreativeResponse
 import com.github.dozermapper.core.loader.api.BeanMappingBuilder
@@ -16,5 +17,11 @@ class CreativeMapping : BeanMappingBuilder() {
 
         mapping(ImageCreative::class.java, CreativeResponse::class.java)
             .fields("this", "imageAttributes")
+
+        mapping(CreativeForm::class.java, VideoCreative::class.java)
+            .fields("videoAttributes", "this")
+
+        mapping(VideoCreative::class.java, CreativeResponse::class.java)
+            .fields("this", "videoAttributes")
     }
 }

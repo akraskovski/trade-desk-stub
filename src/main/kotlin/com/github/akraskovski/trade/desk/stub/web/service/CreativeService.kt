@@ -1,8 +1,11 @@
 package com.github.akraskovski.trade.desk.stub.web.service
 
-import com.github.akraskovski.trade.desk.stub.domain.model.creative.ImageCreative
+import com.github.akraskovski.trade.desk.stub.domain.model.creative.Creative
 import com.github.akraskovski.trade.desk.stub.domain.repository.ImageCreativeRepository
+import com.github.akraskovski.trade.desk.stub.domain.repository.VideoCreativeRepository
 import com.github.akraskovski.trade.desk.stub.web.converter.map
+import com.github.akraskovski.trade.desk.stub.web.converter.mapToImage
+import com.github.akraskovski.trade.desk.stub.web.converter.mapToVideo
 import com.github.akraskovski.trade.desk.stub.web.form.creative.CreativeForm
 import com.github.akraskovski.trade.desk.stub.web.form.search.CreativeSearchQuery
 import com.github.akraskovski.trade.desk.stub.web.response.creative.CreativeResponse
@@ -15,6 +18,7 @@ import org.springframework.stereotype.Service
 @Service
 class CreativeService(
     private val imageCreativeRepository: ImageCreativeRepository,
+    private val videoCreativeRepository: VideoCreativeRepository,
     private val searchService: SearchService,
     private val mapper: Mapper
 ) {
@@ -22,10 +26,10 @@ class CreativeService(
     /**
      * Create and store in db creative entity.
      */
-    fun create(creativeForm: CreativeForm): ImageCreative {
-        creativeForm.imageAttributes ?: throw UnsupportedOperationException("Image attributes should be not empty")
-
-        return imageCreativeRepository.save(mapper.map(creativeForm))
+    fun create(creativeForm: CreativeForm): Creative {
+        return creativeForm.imageAttributes?.let { imageCreativeRepository.save(mapper.mapToImage(creativeForm)) }
+            ?.let { creativeForm.videoAttributes?.let { videoCreativeRepository.save(mapper.mapToVideo(creativeForm)) } }
+            ?: throw UnsupportedOperationException("Image attributes should be not empty")
     }
 
     /**
@@ -34,6 +38,7 @@ class CreativeService(
     fun searchByParent(query: CreativeSearchQuery): List<CreativeResponse> {
         val result = mutableListOf<CreativeResponse>()
         result.addAll(searchService.searchByParent(query, imageCreativeRepository).map(mapper::map))
+        result.addAll(searchService.searchByParent(query, videoCreativeRepository).map(mapper::map))
         //here could be any other creative repositories search
 
         return result
