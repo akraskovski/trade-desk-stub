@@ -26,11 +26,12 @@ class CreativeService(
     /**
      * Create and store in db creative entity.
      */
-    fun create(creativeForm: CreativeForm): Creative {
-        return creativeForm.imageAttributes?.let { imageCreativeRepository.save(mapper.mapToImage(creativeForm)) }
-            ?.let { creativeForm.videoAttributes?.let { videoCreativeRepository.save(mapper.mapToVideo(creativeForm)) } }
-            ?: throw UnsupportedOperationException("Image attributes should be not empty")
-    }
+    fun create(creativeForm: CreativeForm): Creative =
+        when {
+            creativeForm.imageAttributes != null -> imageCreativeRepository.save(mapper.mapToImage(creativeForm))
+            creativeForm.videoAttributes != null -> videoCreativeRepository.save(mapper.mapToVideo(creativeForm))
+            else -> throw UnsupportedOperationException("Creative attributes should be not empty")
+        }
 
     /**
      * Search all existing creative aggregated in creative response.
