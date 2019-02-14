@@ -1,4 +1,4 @@
-`package com.github.akraskovski.trade.desk.stub.web.response.creative
+package com.github.akraskovski.trade.desk.stub.web.response.creative
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
