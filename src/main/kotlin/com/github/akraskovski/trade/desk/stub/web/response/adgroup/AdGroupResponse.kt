@@ -7,7 +7,7 @@ import com.github.akraskovski.trade.desk.stub.domain.model.Availability
  * AdGroupResponse.
  */
 class AdGroupResponse(
-    @field:JsonProperty("AdGroupId") var id: String,
+    @field:JsonProperty("AdGroupId") var id: String? = null,
 
     @field:JsonProperty("CampaignId") var campaignId: String? = null,
 

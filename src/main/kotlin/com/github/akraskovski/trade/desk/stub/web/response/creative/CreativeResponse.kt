@@ -7,7 +7,7 @@ import com.github.akraskovski.trade.desk.stub.domain.model.Availability
  * CreativeResponse.
  */
 class CreativeResponse(
-    @field:JsonProperty("CreativeId") val id: String,
+    @field:JsonProperty("CreativeId") var id: String? = null,
     @field:JsonProperty("AdvertiserId") var advertiserId: String? = null,
     @field:JsonProperty("CreativeName") var name: String? = null,
     @field:JsonProperty("Description") var description: String? = null,

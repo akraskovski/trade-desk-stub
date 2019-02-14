@@ -24,3 +24,9 @@ inline fun <reified R : Any, T> Page<T>.toResponse(noinline domainMapper: (T) ->
         .let {
             PageResponse(it.content, it.numberOfElements.toLong(), it.totalElements, it.totalElements)
         }
+
+/**
+ * Mapper extension func from domain document to prepared search response.
+ */
+fun <T> List<T>.toResponse(): PageResponse<T> =
+    PageResponse(this, size.toLong(), size.toLong(), size.toLong())

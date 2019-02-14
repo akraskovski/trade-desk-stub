@@ -10,7 +10,7 @@ abstract class SearchQuery {
 
     //not supported right now, but it's really not needed.
     @JsonProperty("SearchTerms")
-    var searchTerms: List<String> = emptyList()
+    var searchTerms: List<String>? = emptyList()
 
     @JsonProperty("Availabilities")
     var availabilities: Set<Availability> = setOf(Availability.Available)

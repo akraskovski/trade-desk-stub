@@ -7,9 +7,7 @@ import java.math.BigDecimal
  * MoneyResponse object representation.
  */
 class MoneyResponse(
-    @JsonProperty("Amount")
-    private var amount: BigDecimal? = null,
+    @field:JsonProperty("Amount") var amount: BigDecimal? = null,
 
-    @JsonProperty("CurrencyCode")
-    private var currencyCode: String? = null
+    @field:JsonProperty("CurrencyCode") var currencyCode: String? = null
 )
