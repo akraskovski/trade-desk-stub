@@ -12,5 +12,6 @@ class CreativeForm(
     @field:JsonProperty("CreativeName") var name: String? = null,
     @field:JsonProperty("Description") var description: String? = null,
     @field:JsonProperty("Availability") var availability: Availability? = null,
-    @field:JsonProperty("ImageAttributes") var imageAttributes: ImageAttributesForm? = null
+    @field:JsonProperty("ImageAttributes") var imageAttributes: ImageAttributesForm? = null,
+    @field:JsonProperty("TradeDeskHostedVideoAttributes") var videoAttributes: VideoAttributesForm? = null
 )
